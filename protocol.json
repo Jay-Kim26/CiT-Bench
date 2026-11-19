@@ -1,0 +1,179 @@
+{
+  "name": "CiT-Bench 2027 Final: answer-only prompts with untagged output (AD v15.1, IMP/FC t3)",
+  "version": "cit-bench-2027-final-global-v2",
+  "common": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "seed_rule": "int(sha256(f\"{seed_namespace}|{id}|{round}\").hexdigest()[:8], 16) % 2**31",
+    "retries": "only for unparseable responses; no majority voting"
+  },
+  "tasks": {
+    "ad": {
+      "dataset_version": "cit-bench-2027-paired-v15.1",
+      "seed_namespace": "cit-bench-2027-paired-v15.1",
+      "context_framing": "the partner deviation is stated as normal (exclusion)",
+      "output": "Respond ONLY with the JSON object {\"start\": <int>, \"end\": <int>}",
+      "parse": "first \"start\": int, \"end\": int anywhere in the output; valid if 0 <= start <= end < L",
+      "rounds": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "need_valid": 1,
+      "selection": "first valid response",
+      "score": "correct if the best-overlapping candidate is the target and IoU >= 0.5 (inclusive steps)",
+      "metrics": [
+        "accuracy",
+        "pair consistency (both A and B correct)"
+      ],
+      "structure": "100 scenes x (L1, L2) x (A, B)",
+      "seed_examples": [
+        {
+          "id": "ad_shift_000_L1_A",
+          "round": 0,
+          "seed": 1759276797
+        },
+        {
+          "id": "ad_shift_000_L1_A",
+          "round": 1,
+          "seed": 451972474
+        },
+        {
+          "id": "ad_shift_000_L1_B",
+          "round": 0,
+          "seed": 736869412
+        },
+        {
+          "id": "ad_shift_000_L1_B",
+          "round": 1,
+          "seed": 451522884
+        },
+        {
+          "id": "ad_shift_000_L2_A",
+          "round": 0,
+          "seed": 89232439
+        },
+        {
+          "id": "ad_shift_000_L2_A",
+          "round": 1,
+          "seed": 1255136471
+        }
+      ]
+    },
+    "imp": {
+      "dataset_version": "cit-bench-2027-imp-t3-v1",
+      "seed_namespace": "cit-bench-2027-imp-t3-v1",
+      "output": "Respond ONLY with the W values (of series Y for delay scenes), one per line in (index, value) format with d decimal place(s)",
+      "parse": "all \"(i, v)\", \"i, v\" or \"i:v\" pairs in the output; valid if every required index appears (a repeated index keeps its last value) and no value is followed on the same line by +, * or / and another number",
+      "rounds": [
+        25,
+        5,
+        5,
+        5
+      ],
+      "need_valid": 25,
+      "selection": "first 25 valid responses",
+      "failure_score": 1.0,
+      "metrics": [
+        "coverage",
+        "RCRPS including failures",
+        "RCRPS over covered queries"
+      ],
+      "score": "RCRPS: fair CRPS normalized by the range of the shown values of the imputed series (Y for delay), RoI and the other missing steps weighted 0.5 each",
+      "structure": "200 scenes x (L1, L2); no A/B pairs",
+      "seed_examples": [
+        {
+          "id": "imp_shift_000_L1",
+          "round": 0,
+          "seed": 789712362
+        },
+        {
+          "id": "imp_shift_000_L1",
+          "round": 1,
+          "seed": 840238090
+        },
+        {
+          "id": "imp_shift_000_L2",
+          "round": 0,
+          "seed": 384014545
+        },
+        {
+          "id": "imp_shift_000_L2",
+          "round": 1,
+          "seed": 1034945333
+        },
+        {
+          "id": "imp_shift_001_L1",
+          "round": 0,
+          "seed": 1215267659
+        },
+        {
+          "id": "imp_shift_001_L1",
+          "round": 1,
+          "seed": 1723870275
+        }
+      ]
+    },
+    "fc": {
+      "dataset_version": "cit-bench-2027-fc-t3-v1",
+      "seed_namespace": "cit-bench-2027-fc-t3-v1",
+      "output": "Respond ONLY with the H values (of series Y for delay scenes), one per line in (index, value) format with d decimal place(s)",
+      "parse": "all \"(i, v)\", \"i, v\" or \"i:v\" pairs in the output; valid if every required index appears (a repeated index keeps its last value) and no value is followed on the same line by +, * or / and another number, over the forecast steps",
+      "rounds": [
+        25,
+        5,
+        5,
+        5
+      ],
+      "need_valid": 25,
+      "selection": "first 25 valid responses",
+      "failure_score": 1.0,
+      "metrics": [
+        "coverage",
+        "RCRPS including failures",
+        "RCRPS over covered queries"
+      ],
+      "score": "RCRPS: fair CRPS normalized by the range of the history of the forecast series (Y for delay); the change runs to the end of the window, and the RoI and the forecast steps before it are weighted 0.5 each",
+      "structure": "200 scenes x (L1, L2); no A/B pairs",
+      "seed_examples": [
+        {
+          "id": "fc_shift_000_L1",
+          "round": 0,
+          "seed": 262737286
+        },
+        {
+          "id": "fc_shift_000_L1",
+          "round": 1,
+          "seed": 654605566
+        },
+        {
+          "id": "fc_shift_000_L2",
+          "round": 0,
+          "seed": 1021177069
+        },
+        {
+          "id": "fc_shift_000_L2",
+          "round": 1,
+          "seed": 1597500810
+        },
+        {
+          "id": "fc_shift_001_L1",
+          "round": 0,
+          "seed": 1558181543
+        },
+        {
+          "id": "fc_shift_001_L1",
+          "round": 1,
+          "seed": 60695842
+        }
+      ]
+    }
+  }
+}

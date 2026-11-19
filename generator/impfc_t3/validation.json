@@ -1,0 +1,173 @@
+{
+  "imp": {
+    "queries": 400,
+    "scenes": 200,
+    "quotas": {
+      "shift": 24,
+      "amplitude": 28,
+      "flat": 24,
+      "bounding": 24,
+      "frequency": 34,
+      "self_repetition": 33,
+      "delay": 33
+    },
+    "cells": {
+      "L1/magnitude": 100,
+      "L2/magnitude": 100,
+      "L1/temporal": 100,
+      "L2/temporal": 100
+    },
+    "context_gain_rcrps": {
+      "shift": {
+        "min": 0.0865,
+        "median": 0.2038,
+        "oracle_median": 0.0154,
+        "ignore_median": 0.2202,
+        "ratio_min": 5.53
+      },
+      "amplitude": {
+        "min": 0.0252,
+        "median": 0.0445,
+        "oracle_median": 0.0142,
+        "ignore_median": 0.0622,
+        "ratio_min": 2.5
+      },
+      "flat": {
+        "min": 0.0539,
+        "median": 0.1165,
+        "oracle_median": 0.0142,
+        "ignore_median": 0.135,
+        "ratio_min": 4.41
+      },
+      "bounding": {
+        "min": 0.0225,
+        "median": 0.0702,
+        "oracle_median": 0.0101,
+        "ignore_median": 0.0774,
+        "ratio_min": 2.88
+      },
+      "frequency": {
+        "min": 0.0529,
+        "median": 0.145,
+        "oracle_median": 0.0139,
+        "ignore_median": 0.1639,
+        "ratio_min": 3.83
+      },
+      "self_repetition": {
+        "min": 0.058,
+        "median": 0.1332,
+        "oracle_median": 0.0158,
+        "ignore_median": 0.1514,
+        "ratio_min": 4.33
+      },
+      "delay": {
+        "min": 0.0556,
+        "median": 0.0774,
+        "oracle_median": 0.0154,
+        "ignore_median": 0.0941,
+        "ratio_min": 4.14
+      }
+    },
+    "self_repetition_wrong_copy_ratio": {
+      "min": 2.55,
+      "median": 3.92
+    },
+    "self_repetition_double_peaked_source": 16,
+    "delay_joint_curvature_ratio_max": 0.999,
+    "prompt_chars": {
+      "max": 6589,
+      "median": 3320
+    },
+    "problems": []
+  },
+  "fc": {
+    "queries": 400,
+    "scenes": 200,
+    "quotas": {
+      "shift": 20,
+      "amplitude": 20,
+      "flat": 20,
+      "bounding": 20,
+      "trend_rate": 20,
+      "frequency": 34,
+      "self_repetition": 33,
+      "delay": 33
+    },
+    "cells": {
+      "L1/magnitude": 100,
+      "L2/magnitude": 100,
+      "L1/temporal": 100,
+      "L2/temporal": 100
+    },
+    "context_gain_rcrps": {
+      "shift": {
+        "min": 0.0898,
+        "median": 0.1816,
+        "oracle_median": 0.0144,
+        "ignore_median": 0.1931,
+        "ratio_min": 4.59
+      },
+      "amplitude": {
+        "min": 0.0271,
+        "median": 0.0535,
+        "oracle_median": 0.0144,
+        "ignore_median": 0.0687,
+        "ratio_min": 2.6
+      },
+      "flat": {
+        "min": 0.0668,
+        "median": 0.1265,
+        "oracle_median": 0.0147,
+        "ignore_median": 0.1429,
+        "ratio_min": 4.78
+      },
+      "bounding": {
+        "min": 0.0179,
+        "median": 0.0533,
+        "oracle_median": 0.01,
+        "ignore_median": 0.0644,
+        "ratio_min": 2.48
+      },
+      "trend_rate": {
+        "min": 0.0062,
+        "median": 0.018,
+        "oracle_median": 0.0039,
+        "ignore_median": 0.0213,
+        "ratio_min": 2.39
+      },
+      "frequency": {
+        "min": 0.0642,
+        "median": 0.1494,
+        "oracle_median": 0.0145,
+        "ignore_median": 0.164,
+        "ratio_min": 5.7
+      },
+      "self_repetition": {
+        "min": 0.0388,
+        "median": 0.092,
+        "oracle_median": 0.0161,
+        "ignore_median": 0.1086,
+        "ratio_min": 3.09
+      },
+      "delay": {
+        "min": 0.0564,
+        "median": 0.0962,
+        "oracle_median": 0.0157,
+        "ignore_median": 0.1094,
+        "ratio_min": 4.49
+      }
+    },
+    "self_repetition_wrong_copy_ratio": {
+      "min": 1.81,
+      "median": 3.83
+    },
+    "self_repetition_double_peaked_source": 16,
+    "delay_joint_curvature_ratio_max": 0.989,
+    "prompt_chars": {
+      "max": 4796,
+      "median": 2639
+    },
+    "problems": []
+  },
+  "status": "PASS"
+}
