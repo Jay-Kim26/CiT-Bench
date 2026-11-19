@@ -22,7 +22,7 @@
       "scenes": 200
     }
   },
-  "prepared_utc": "2026-11-19T10:28:49.449750+00:00",
+  "prepared_utc": "2026-11-19T10:39:13.753272+00:00",
   "files_sha256": {
     ".gitignore": "3450eb2cbce242f35e9c28e737400494beab02118fc265e936598a484e117c40",
     "AD/pairs.jsonl": "917542c50940ddae4ce0f7d5daad9e048b52c13fc51148627131952de16e9353",
@@ -39,8 +39,10 @@
     "IMP/tags.jsonl": "d46680d42dba28f4059b5729a8a55add122b38edab710f6c54cf6acae4784280",
     "LICENSE-CODE.txt": "f2cab67dfb6dc7f100ce8ccfed19a280a195c617908176a8de4c076da0805c9a",
     "LICENSE-DATA.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
-    "LICENSE.md": "018308fdb24b9da184d5ad32f85b082d62158396cd2ab14993b69440944da459",
-    "README.md": "340bfee8f23ccacf44aff2c4b3351661a49a9d5f8d4df41510abf674d4d0b7b4",
+    "LICENSE.md": "fff51d4a511b841e3aa7d27cf2df235079f8c323d7031306f649711c074ab318",
+    "README.md": "9bcfe8b71666bb63609d1156e5fa13be2e38fa2449a3140edb78e4a6c6e69d99",
+    "assets/fig_benchmark_dataset.pdf": "02df4be01eaa8d2972bff1e8547f4886d29ec2b6532023d6568a33a73fef3984",
+    "assets/fig_benchmark_dataset.png": "6100096904715579020e8ceab6c737a9515bffbabc4145a260b708c2908e0bdc",
     "cit_eval.py": "01847a10968f7d14f13804f04845825a49eb83c1e0894ebb568696f939c5a550",
     "evaluate.py": "a105c73aa7b5c37252d612dc91ff594dd353746cb608cefdff66f201da7201bc",
     "generator/_generator/bases.py": "0f1653cfc68c338f5fc245f3f1e3571fe494446a89de4b34c11cd343ae09f12a",

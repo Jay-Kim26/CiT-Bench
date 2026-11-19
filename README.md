@@ -2,6 +2,10 @@
 
 CiT-Bench evaluates the use of textual context in time-series anomaly detection (AD), imputation (IMP), and forecasting (FC). This repository contains the benchmark queries, labels, evaluation protocol, and scoring code. The dataset contains **1,200 queries** in total.
 
+![Six CiT-Bench examples: temporal and magnitude conditions for anomaly detection, imputation, and forecasting](assets/fig_benchmark_dataset.png)
+
+*Examples from the released AD v15.1 and IMP/FC t3 data. Blue marks the target interval or hidden ground truth; orange marks the deviation declared normal in AD or the event specified by context in IMP/FC. Ground-truth annotations and hidden values are shown only to explain the benchmark; they are not part of model inputs. [Download the vector PDF](assets/fig_benchmark_dataset.pdf).*
+
 | Task | Scenes | Queries per scene | Queries | Level 1 magnitude | Level 1 temporal | Level 2 magnitude | Level 2 temporal |
 | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: |
 | Anomaly detection | 100 | Level 1/2 × context A/B | 400 | 100 | 100 | 100 | 100 |
